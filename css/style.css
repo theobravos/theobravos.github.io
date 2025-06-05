@@ -62,11 +62,11 @@
     text-align: center;
   }
   .headshot {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 1rem;
+    width: 150px;            /* fixed square dimensions */
+    height: 150px;           /* both width and height must match */
+    border-radius: 50%;      /* makes it a circle */
+    object-fit: cover;       /* crops and fills the square */
+    display: block;          /* avoid inline quirks */
   }
   .about-text h1 {
     font-size: 2rem;
