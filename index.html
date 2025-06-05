@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Theo Bravos • Portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Google Font example (optional) -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <!-- 1. HEADER / NAV -->
+  <header id="header">
+    <nav class="nav-container">
+      <div class="logo">Theo Bravos</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 2. HERO / ABOUT SECTION -->
+  <section id="about" class="section-container">
+    <div class="about-content">
+      <img src="assets/img/headshot.jpg" alt="Theo Bravos" class="headshot" />
+      <div class="about-text">
+        <h1>Hi, I’m Theo Bravos</h1>
+        <p>
+          I’m a Business Analytics Master’s candidate at USC who builds
+          predictive models, dashboards, and data pipelines. I’ve interned in
+          sports analytics and financial data science—right now, I’m focused on
+          MLB/MLB-StatsAPI projects, machine learning, and advanced SQL. Take
+          a look at my work below!
+        </p>
+        <a href="assets/resume.pdf" class="btn">Download Résumé</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. PROJECTS SECTION -->
+  <section id="projects" class="section-container">
+    <h2>Selected Projects</h2>
+    <div class="projects-grid">
+      <!-- Project Card 1 -->
+      <div class="project-card">
+        <img
+          src="assets/img/project1-screenshot.png"
+          alt="Project 1 screenshot"
+        />
+        <div class="project-info">
+          <h3>MLB Hit Predictor</h3>
+          <p>
+            A Python & XGBoost pipeline that scrapes historical MLB at-bat data
+            via MLB-StatsAPI and predicts player hit probability with 82% accuracy.
+          </p>
+          <a
+            href="https://github.com/theobravos/mlb-hit-predictor"
+            target="_blank"
+            class="project-link"
+            >View Repo</a
+          >
+        </div>
+      </div>
+
+      <!-- Project Card 2 -->
+      <div class="project-card">
+        <img
+          src="assets/img/project2-screenshot.png"
+          alt="Project 2 screenshot"
+        />
+        <div class="project-info">
+          <h3>Insurance Loss Analytics</h3>
+          <p>
+            Built XGBoost & LassoCV models on a 37K-row insurance dataset to
+            predict loss cost/exposure (MSE ≈ 73K) and recommended premium
+            adjustments (ROC-AUC 0.929).
+          </p>
+          <a
+            href="https://github.com/theobravos/insurance-loss-analytics"
+            target="_blank"
+            class="project-link"
+            >View Repo</a
+          >
+        </div>
+      </div>
+
+      <!-- Add more project cards similarly -->
+    </div>
+  </section>
+
+  <!-- 4. SKILLS SECTION -->
+  <section id="skills" class="section-container">
+    <h2>Skills & Tools</h2>
+    <ul class="skills-list">
+      <li>Python (pandas, scikit-learn, XGBoost)</li>
+      <li>SQL (PostgreSQL, BigQuery)</li>
+      <li>Tableau & Power BI</li>
+      <li>Machine Learning (Random Forest, SVM, Time Series)</li>
+      <li>Excel (Pivot Tables, VBA)</li>
+      <li>Git & GitHub</li>
+    </ul>
+  </section>
+
+  <!-- 5. CONTACT SECTION -->
+  <section id="contact" class="section-container">
+    <h2>Let’s Connect</h2>
+    <div class="contact-info">
+      <p>Email: <a href="mailto:tbravos@usc.edu">tbravos@usc.edu</a></p>
+      <p>
+        LinkedIn:
+        <a href="https://linkedin.com/in/theobravos" target="_blank"
+          >linkedin.com/in/theobravos</a
+        >
+      </p>
+      <p>
+        GitHub:
+        <a href="https://github.com/theobravos" target="_blank"
+          >github.com/theobravos</a
+        >
+      </p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 Theo Bravos</p>
+  </footer>
+</body>
+</html>
