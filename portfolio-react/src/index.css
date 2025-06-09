@@ -222,18 +222,7 @@ transform: translateY(-2px) scale
 .btn:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
-/* Add a smooth transition to the headshot image */
-.headshot {
-  transition: transform 0.3s ease;
-}
-.headshot:hover {
-  /* slightly enlarge the headshot on hover */
-  transform: scale(1.05);
-}
-/* Add a subtle shadow to the headshot */
-.headshot {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+
 /* Add a hover effect to the skills list items */
 .skills-list li {
   transition: background-color 0.3s ease;
@@ -264,3 +253,4 @@ header {
 .project-card:hover {
   z-index: 1;                  /* stays above its siblings but below the header */
 }
+
