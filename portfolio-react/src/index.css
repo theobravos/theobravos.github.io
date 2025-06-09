@@ -208,6 +208,13 @@ header {
   /* darken the button background on hover */
   background: #005bb5;
 }
+.btn:hover {
+  /* slightly lift the button on hover */
+  transition: transform 0.3s ease;
+  transform: translateY(-2px) scale(1.05);
+}
+  /* slightly lift the button
+transform: translateY(-2px) scale
 /* Add a subtle shadow to the button */
 .btn {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -234,4 +241,26 @@ header {
 .skills-list li:hover {
   /* darken the background on hover */
   background: #d3d3d3;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;               /* ← add this */
+  background: #ffffff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* 2. Make sure cards don’t overlap the “Selected Projects” title */
+#projects h2 {
+  margin-bottom: 1.5rem;       /* bump this up so the first row has room to “pop” */
+}
+
+/* 3. Give each card its own stacking context under the header */
+.project-card {
+  position: relative;  
+  z-index: 0;
+}
+.project-card:hover {
+  z-index: 1;                  /* stays above its siblings but below the header */
 }

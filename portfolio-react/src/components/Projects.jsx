@@ -3,7 +3,7 @@ import React from 'react';
 export default function Projects() {
   return (
     <section id="projects" className="section-container">
-      <h2>Selected Projects</h2>
+      <h2>Projects</h2>
       <div className="projects-grid">
         {/* Project Card 1 */}
         <div className="project-card">
