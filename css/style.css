@@ -57,16 +57,19 @@
   /* 3. ABOUT / HERO */
   .about-content {
     display: flex;
-    flex-direction: column-reverse;
     align-items: center;
-    text-align: center;
+    justify-content: center;
+    text-align: center; /* for mobile / column layout */
   }
+  
+  /* Style the headshot itself */
   .headshot {
-    width: 150px;            /* fixed square dimensions */
-    height: 150px;           /* both width and height must match */
-    border-radius: 50%;      /* makes it a circle */
-    object-fit: cover;       /* crops and fills the square */
-    display: block;          /* avoid inline quirks */
+    display: block;
+    margin: 0 auto;     /* centers the image horizontally */
+    width: 150px;        /* or whatever size you prefer */
+    height: 150px;
+    border-radius: 50%;  /* circle */
+    object-fit: cover;   /* crop-to-fit */
   }
   .about-text h1 {
     font-size: 2rem;
@@ -170,9 +173,10 @@
     .about-content {
       flex-direction: row;
       text-align: left;
+      justify-content: flex-start;
     }
     .headshot {
+      margin: 0;         /* reset auto margin */
       margin-right: 2rem;
-      margin-bottom: 0;
     }
   }
