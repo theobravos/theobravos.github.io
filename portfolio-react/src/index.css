@@ -254,3 +254,27 @@ header {
   z-index: 1;                  /* stays above its siblings but below the header */
 }
 
+/* Container for resume button + social icons */
+.hero-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;            /* space between items */
+  margin-top: 1.5rem;   /* push away from the text */
+}
+
+/* Social icon buttons */
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  transition: transform 0.2s, background 0.2s;
+}
+.social-btn:hover {
+  transform: scale(1.1);
+  background: rgba(255,255,255,0.3);
+}
