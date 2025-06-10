@@ -1,5 +1,4 @@
 
-/* 0. Reset & Global */
 * {
   margin: 0;
   padding: 0;
@@ -255,6 +254,7 @@ header {
 .experience-education > h2 {
   text-align: center;
   font-size: 2rem;
+  margin-top: 10rem;
   margin-bottom: 5rem;
 }
 
@@ -330,7 +330,7 @@ header {
 .hero-header {
   text-align: center;
   padding: var(--section-padding-vertical) 0;
-  min-height: 85vh; /* takes up most of the viewport */
+  min-height: 90vh; /* takes up most of the viewport */
   display: flex;
   flex-direction: column;
   justify-content: center; /* vertically center content */
@@ -371,4 +371,80 @@ header {
 }
 
 
+
+/* ─── Contact Form Styling ─── */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1.25rem;
+}
+
+/* Theme-matched contact form */
+.contact-form label {
+  display: block;
+  font-weight: 500;
+  color: #111827;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  background: #e9ecef;
+  border: none;
+  border-radius: 9999px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-family: inherit;
+  color: #111827;
+  resize: none;
+}
+
+.contact-form textarea {
+  border-radius: 0.75rem; /* pill style for multi-line */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 112, 243, 0.2);
+}
+
+.contact-form .btn {
+  background: #0070f3;
+  color: #fff;
+  border-radius: 9999px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  width: max-content;
+  margin-top: 0.5rem;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.contact-form .btn:hover {
+  background: #005bb5;
+  transform: translateY(-2px);
+}
+
+
+/* Center the Contact section title */
+#contact h2 {
+  text-align: center;
+  margin-left: 0;  /* in case you’ve overridden it elsewhere */
+}
+
+/* ─── Center Skills & Tools section title ─── */
+
+#skills h2 {
+  text-align: center;
+  margin-left: 0;  /* in case you’ve overridden it elsewhere */
+}
+/* ─── Center Skills and Tools  ─── */
+
+#skills .skills-list {
+  justify-content: center; /* center the skills list */
+  flex-wrap: wrap;        /* allow wrapping */
+  gap: 1rem;
+  margin-bottom: 10rem ;              /* space between items */
+}
 
