@@ -245,7 +245,8 @@ header {
 
 /* 2. Make sure cards don’t overlap the “Selected Projects” title */
 #projects h2 {
-  margin-bottom: 1.5rem;       /* bump this up so the first row has room to “pop” */
+  margin-top: 10rem;         /* space above the title */
+  margin-bottom: 5rem;       /* bump this up so the first row has room to “pop” */
   text-align: center;
 }
 
@@ -447,4 +448,62 @@ header {
   gap: 1rem;
   margin-bottom: 10rem ;              /* space between items */
 }
+
+
+/* Hero Section Spacing */
+.hero-header h1 {
+  margin-bottom: var(--grid-gap);
+}
+.hero-header h2 {
+  margin-bottom: var(--grid-gap);
+}
+.hero-header .social-links {
+  margin-bottom: var(--grid-gap);
+}
+.hero-tagline {
+  margin-bottom: var(--grid-gap);
+  font-size: 1.25rem;
+  color: #4b5563;
+}
+.hero-animation {
+  margin-bottom: var(--grid-gap);
+}
+.scroll-indicator {
+  margin-top: var(--grid-gap);
+  display: flex;
+  justify-content: center;
+  animation: bounce 2s infinite;
+}
+
+/* Scroll Indicator bottom of screen*/
+
+.scroll-indicator {
+  position: fixed;
+  bottom: 20px;
+  left: 49%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: #0070f3;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.scroll-indicator:hover {
+  background-color: #005bb5;
+  transform: translateX(-50%) scale(1.1);
+}
+
+/* Bounce animation for scroll indicator */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(8px); }
+  60% { transform: translateY(4px); }
+}
+
+
 

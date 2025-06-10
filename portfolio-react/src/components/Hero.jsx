@@ -1,5 +1,5 @@
-import React from 'react';
-import { LinkedinIcon, GithubIcon, Mail } from 'lucide-react';
+import React, { useRef, useEffect } from 'react';
+import { LinkedinIcon, GithubIcon, Mail, ChevronsDown } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -16,6 +16,7 @@ export default function Hero() {
     >
       <h1>Theo Bravos</h1>
       <h2>Data Analyst</h2>
+      <h3>Optimizing performance through data-driven insights</h3>
       <div className="social-links">
         <a href="https://linkedin.com/in/theobravos" target="_blank" rel="noreferrer">
           <LinkedinIcon />
@@ -27,6 +28,11 @@ export default function Hero() {
           <Mail />
         </a>
       </div>
+      {/* Scroll down arrow */}
+      <a href="#about" className="scroll-indicator">
+        <ChevronsDown size={32}/>
+      </a>
     </section>
+    
   );
 }
