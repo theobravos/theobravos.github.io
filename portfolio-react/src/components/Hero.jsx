@@ -29,7 +29,7 @@ export default function Hero() {
         </a>
       </div>
       {/* Scroll down arrow */}
-      <a href="#Projects" className="scroll-indicator">
+      <a href="#projects" className="scroll-indicator">
         <ChevronsDown size={32}/>
       </a>
     </section>
