@@ -24,30 +24,8 @@ export default function About() {
           </p>
           <a href="/assets/resume.pdf" className="btn">
             Download Resume
-            </a>
-          <a
-            href="https://linkedin.com/in/theobravos"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="LinkedIn"
-            className="social-btn"
-          >
-            <Linkedin size={24} />
-          </a>
-          <a
-            href="https://github.com/theobravos"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="GitHub"
-            className="social-btn"
-          >
-            <Github size={24} />
           </a>
         </div>
-
-        <a href="#projects" className="scroll-indicator">
-          <ChevronDown size={36} />
-        </a>
       </div>
     </section>
   );
