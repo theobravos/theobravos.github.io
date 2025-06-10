@@ -4,7 +4,6 @@ export default function Header() {
   return (
     <header id="header">
       <nav className="nav-container">
-        <div className="logo">Theo Bravos</div>
         <ul className="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#projects">Projects</a></li>

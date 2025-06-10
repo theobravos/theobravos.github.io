@@ -3,10 +3,23 @@ import React from 'react';
 export default function Projects() {
   return (
     <section id="projects" className="section-container">
-      <h2>Projects</h2>
+      
+      <h2
+        className="section-title"
+        data-aos="fade-up"
+        data-aos-offset="100"
+        data-aos-delay="50"
+      >
+        Projects
+      </h2>
       <div className="projects-grid">
         {/* Project Card 1 */}
-        <div className="project-card">
+        <div 
+          className="project-card"
+          data-aos="fade-up"
+          data-aos-offset="100"
+          data-aos-delay="100"
+        >
           <img
             src="/assets/img/music-analytics.png"
             alt="Music Entertainment Analytics Dashboard"
@@ -30,7 +43,12 @@ export default function Projects() {
         </div>
 
         {/* Project Card 2 */}
-        <div className="project-card">
+        <div 
+          className="project-card"
+          data-aos="fade-up"
+          data-aos-offset="100"
+          data-aos-delay="100"
+        >
           <img
             src="/assets/img/insurance-loss.png"
             alt="Predicting Loss Causes screenshot"
@@ -54,7 +72,12 @@ export default function Projects() {
         </div>
 
         {/* Project Card 3 */}
-        <div className="project-card">
+        <div 
+          className="project-card"
+          data-aos="fade-up"
+          data-aos-offset="100"
+          data-aos-delay="100"
+        >
           <img
             src="/assets/img/movie-analytics.png"
             alt="Movie Ratings Analysis screenshot"
