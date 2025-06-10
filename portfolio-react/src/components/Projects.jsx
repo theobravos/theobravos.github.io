@@ -100,6 +100,32 @@ export default function Projects() {
           </div>
         </div>
 
+        {/* Project Card 4 */}
+        <div
+          className="project-card"
+          data-aos="fade-up"
+          data-aos-offset="100"
+          data-aos-delay="100"
+        >
+          <img
+            src="/assets/img/portfolio-website.png"
+            alt="Personal Portfolio Website screenshot"
+          />
+          <div className="project-info">
+            <h3>Personal Portfolio Website</h3>
+            <p>
+              Developed and iteratively enhanced this portfolio website using React, CSS Grid, and AOS animations for an engaging, responsive showcase of my work and skills.
+            </p>
+            <a
+              href="https://github.com/theobravos/theobravos.github.io"
+              target="_blank"
+              rel="noreferrer"
+              className="project-link"
+            >
+              View Repo
+            </a>
+          </div>
+        </div>
         {/* …add more cards here… */}
       </div>
     </section>

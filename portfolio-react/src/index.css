@@ -505,5 +505,134 @@ header {
   60% { transform: translateY(4px); }
 }
 
+/* ─── Project Carousel Styling ─── */
+
+.carousel-wrapper {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+}
+/* Carousel container */
+.projects-carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 2rem;
+  padding: 0 30% var(--grid-gap) 30%;
+  margin: 0 -30% var(--grid-gap) -30%;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.projects-carousel::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for a cleaner look */
+}
+.projects-carousel .project-card {
+  flex: 0 0 auto; /* Prevent flex items from shrinking */
+  scroll-snap-align: start; /* Snap to the start of each card */
+  width: 280px; /* Fixed width for each card */
+}
+.projects-carousel .project-card img {
+  height: 180px; /* Fixed height for consistency */
+}
+.projects-carousel .project-card:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+.projects-carousel .project-card h3 {
+  font-size: 1.25rem;
+  margin: 0.5rem 0;
+}
+.projects-carousel .project-card p {
+  font-size: 0.875rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+.projects-carousel .project-card a {
+  color: #0070f3;
+  text-decoration: none;
+  font-weight: 500;
+}
+.projects-carousel .project-card a:hover {
+  text-decoration: underline;
+}
+
+/* ─── Carousel show part of previous card and next ─── */
+.projects-carousel {
+  padding: 0 30% var(--grid-gap) 30%; /* Add padding to show part of next/previous cards */
+  margin: 0 -30% var(--grid-gap) -30%; /* Adjust margin to match padding */
+}
+/* Carousel slow smooth consistent movement */
+
+.projects-carousel {
+  scroll-behavior: smooth; /* Smooth scrolling */
+  transition: transform 0.3s ease; /* Smooth transform on hover */
+}
+.projects-carousel:hover {
+  transform: translateX(-10px); /* Slight left shift on hover */
+}
+
+/* Each project card in carousel */
+.projects-carousel .project-card {
+  flex: 0 0 50%; /* Each card takes 80% of viewport width */
+  scroll-snap-align: start;
+  margin: 0 var(--section-padding-horizontal);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Zoom and lift on hover */
+.projects-carousel .project-card:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Navigation buttons */
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carousel-nav.prev {
+  left: 0.5rem;
+}
+
+.carousel-nav.next {
+  right: 0.5rem;
+
+}
+.carousel-nav:hover {
+  background: rgba(255, 255, 255, 1);
+}
 
 
+
+/* carousel dots */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ccc;
+  margin: 0 5px;
+  cursor: pointer;
+}
+.carousel-dot.active {
+  background: #0070f3;
+}
+.carousel-dot:hover {
+  background: #005bb5;
+}
