@@ -105,6 +105,7 @@ header {
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
+
   /* aspect-ratio: 6 / 3;           make cards rectangular */
   /* max-width: 600px;              constrain width for rectangle */
   /* margin: 0 auto;                center cards in single column */
@@ -636,3 +637,65 @@ header {
 .carousel-dot:hover {
   background: #005bb5;
 }
+
+/* ─── experience section Adjustments ─── */
+
+.experience-education {
+  padding: 2rem 1rem; /* Adjust padding for better spacing */
+}
+.experience-education h2 {
+  text-align: center;
+  margin-bottom: 2rem; /* Space below the title */
+}
+.experience-education .exp-list {
+  padding-left: 1.5rem; /* Adjust padding for better alignment */
+}
+.experience-education .exp-item {
+  margin-bottom: 2rem; /* Space between items */
+}
+.experience-education .exp-item h4 {
+  font-size: 1.25rem; /* Slightly larger font for job titles */
+  margin-bottom: 0.25rem;
+}
+.experience-education .exp-item p {
+  margin: 0.25rem 0;
+  color: #444;
+  line-height: 1.6;
+}
+.experience-education .exp-item ul {
+  margin: 0.5rem 0 0 1.5rem;
+  padding: 0;
+  list-style: disc;
+  color: #444;
+  line-height: 1.6;
+}
+.resume-download {
+  text-align: center;
+  margin-top: 2rem;
+}
+.resume-download a {
+  display: inline-block;
+  background: #0070f3;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+}
+.resume-download a:hover {
+  background: #005bb5;
+}
+
+/* ─── skills Section Adjustments ─── */
+
+#skills {
+  padding: 2rem 1rem; /* Adjust padding for better spacing */
+}
+#skills h2 {
+  text-align: center;
+  margin-bottom: 2rem; /* Space below the title */
+}
+
+/* Project card spacing */
+
+

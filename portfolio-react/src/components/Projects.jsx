@@ -99,9 +99,8 @@ export default function Projects() {
             </a>
           </div>
         </div>
-
         {/* Project Card 4 */}
-        <div
+        <div 
           className="project-card"
           data-aos="fade-up"
           data-aos-offset="100"
@@ -109,23 +108,25 @@ export default function Projects() {
         >
           <img
             src="/assets/img/portfolio-website.png"
-            alt="Personal Portfolio Website screenshot"
+            alt="Portfolio Website screenshot"
           />
           <div className="project-info">
-            <h3>Personal Portfolio Website</h3>
+            <h3>Portfolio Website</h3>
             <p>
-              Developed and iteratively enhanced this portfolio website using React, CSS Grid, and AOS animations for an engaging, responsive showcase of my work and skills.
+              Built this portfolio website using React, showcasing my projects and skills.
+              It features responsive design, smooth animations, and integrates with AOS for scroll effects.
             </p>
-            <a
-              href="https://github.com/theobravos/theobravos.github.io"
-              target="_blank"
-              rel="noreferrer"
-              className="project-link"
-            >
-              View Repo
-            </a>
-          </div>
-        </div>
+        <a
+          href="https://github.com/theobravos/theobravos.github.io"
+          target="_blank"
+          rel="noreferrer"
+          className="project-link"
+        >
+          View Repo
+        </a>
+      </div>
+    </div>
+        
         {/* …add more cards here… */}
       </div>
     </section>
