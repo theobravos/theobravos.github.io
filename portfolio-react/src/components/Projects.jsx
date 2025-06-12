@@ -1,134 +1,90 @@
 import React from 'react';
+import ScrollFloat from './ScrollFloat';
+import TiltedCard from './TiltedCard';
+
+const PROJECTS = [
+	{
+		id: 1,
+		image: '/assets/img/music-analytics.png',
+		title: 'Music Entertainment Analytics',
+		desc: 'Performed end-to-end SQL analysis & time-series feature engineering.',
+		repo: 'https://github.com/theobravos/music-entertainment-analytics',
+	},
+	{
+		id: 2,
+		image: '/assets/img/insurance-loss.png',
+		title: 'Predicting Loss Causes',
+		desc: 'Engineered predictive models to identify insurance claim likelihood and severity.',
+		repo: 'https://github.com/theobravos/insurance-loss',
+	},
+	{
+		id: 3,
+		image: '/assets/img/movie-analytics.png',
+		title: 'Movie Ratings Analysis',
+		desc: 'Explored and cleaned movie-rating data with Python, built regression models predict revenue.',
+		repo: 'https://github.com/theobravos/movie-ratings-analysis',
+	},
+	{
+		id: 4,
+		image: '/assets/img/portfolio-website.png',
+		title: 'Portfolio Website',
+		desc: 'Built a personal portfolio website using React and modern web technologies.',
+		repo: 'https://github.com/theobravos/theobravos.github.io',
+	},
+];
 
 export default function Projects() {
-  return (
-    <section id="projects" className="section-container">
-      
-      <h2
-        className="section-title"
-        data-aos="fade-up"
-        data-aos-offset="100"
-        data-aos-delay="50"
+	return (
+		<section id="projects" className="section-container">
+			<ScrollFloat className="section-title"
+      animationDuration={1.5}
+      ease="back.inOut(2)"
+      scrollStart="center bottom+=50%"
+      scrollEnd='bottom bottom-=40%'
+      stagger={0.05}
       >
-        Projects
-      </h2>
-      <div className="projects-grid">
-        {/* Project Card 1 */}
-        <div 
-          className="project-card"
-          data-aos="fade-up"
-          data-aos-offset="100"
-          data-aos-delay="100"
-        >
-          <img
-            src="/assets/img/music-analytics.png"
-            alt="Music Entertainment Analytics Dashboard"
-          />
-          <div className="project-info">
-            <h3>Music Entertainment Analytics</h3>
-            <p>
-              Performed end-to-end SQL analysis in PostgreSQL on Agents, Customers, and Engagements.
-              Built time-series and net-contribution analyses using window functions and CTEs.
-              Delivered strategic recommendations and mock Tableau dashboards (revenue, net result, preference scores).
-            </p>
-            <a
-              href="https://github.com/theobravos/music-entertainment-analytics"
-              target="_blank"
-              rel="noreferrer"
-              className="project-link"
-            >
-              View Repo
-            </a>
-          </div>
-        </div>
-
-        {/* Project Card 2 */}
-        <div 
-          className="project-card"
-          data-aos="fade-up"
-          data-aos-offset="100"
-          data-aos-delay="100"
-        >
-          <img
-            src="/assets/img/insurance-loss.png"
-            alt="Predicting Loss Causes screenshot"
-          />
-          <div className="project-info">
-            <h3>Predicting Loss Causes</h3>
-            <p>
-              Engineered 20+ features and trained classification/regression models
-              (XGBoost, Tweedie, Lasso) on a 37K-row insurance dataset to predict claim
-              likelihood and severity.
-            </p>
-            <a
-              href="https://github.com/theobravos/insurance-loss"
-              target="_blank"
-              rel="noreferrer"
-              className="project-link"
-            >
-              View Repo
-            </a>
-          </div>
-        </div>
-
-        {/* Project Card 3 */}
-        <div 
-          className="project-card"
-          data-aos="fade-up"
-          data-aos-offset="100"
-          data-aos-delay="100"
-        >
-          <img
-            src="/assets/img/movie-analytics.png"
-            alt="Movie Ratings Analysis screenshot"
-          />
-          <div className="project-info">
-            <h3>Movie Ratings Analysis</h3>
-            <p>
-              Explored and cleaned movie-rating data in Jupyter notebooks,
-              built regression models to predict ratings, and compiled a final written report.
-              Raw data is hosted on Dropbox; see the GitHub repo for instructions.
-            </p>
-            <a
-              href="https://github.com/theobravos/movie-ratings-analysis"
-              target="_blank"
-              rel="noreferrer"
-              className="project-link"
-            >
-              View Repo
-            </a>
-          </div>
-        </div>
-        {/* Project Card 4 */}
-        <div 
-          className="project-card"
-          data-aos="fade-up"
-          data-aos-offset="100"
-          data-aos-delay="100"
-        >
-          <img
-            src="/assets/img/portfolio-website.png"
-            alt="Portfolio Website screenshot"
-          />
-          <div className="project-info">
-            <h3>Portfolio Website</h3>
-            <p>
-              Built this portfolio website using React, showcasing my projects and skills.
-              It features responsive design, smooth animations, and integrates with AOS for scroll effects.
-            </p>
-        <a
-          href="https://github.com/theobravos/theobravos.github.io"
-          target="_blank"
-          rel="noreferrer"
-          className="project-link"
-        >
-          View Repo
-        </a>
-      </div>
-    </div>
-        
-        {/* …add more cards here… */}
-      </div>
-    </section>
-  );
+				Projects
+      </ScrollFloat>
+			<div
+				className="tilted-cards-container"
+				style={{
+					display: 'flex',
+					flexDirection: 'column', // Arrange items in a single column
+					gap: '2rem', // Add spacing between cards
+					alignItems: 'center', // Center cards horizontally
+				}}
+			>
+				{PROJECTS.map((p) => (
+					<a
+						key={p.id}
+						href={p.repo}
+						target="_blank"
+						rel="noopener noreferrer"
+						style={{ textDecoration: 'none' }} // Remove underline for the link
+					>
+						<TiltedCard
+							imageSrc={p.image}
+							altText={p.title}
+							captionText={p.title}
+							containerHeight="300px"
+							containerWidth="600px"
+							imageHeight="300px"
+							imageWidth="600px"
+							rotateAmplitude={18}
+							scaleOnHover={1.3}
+							showMobileWarning={false}
+							showTooltip={true}
+							displayOverlayContent={true}
+							overlayContent={
+								<div className="tilted-overlay-content">
+									<h4 className="overlay-title">{p.title}</h4>
+									<p className="overlay-desc">{p.desc}</p>
+								</div>
+							}
+						/>
+					</a>
+				))}
+			</div>
+		</section>
+	);
 }

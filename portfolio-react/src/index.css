@@ -696,6 +696,314 @@ header {
   margin-bottom: 2rem; /* Space below the title */
 }
 
-/* Project card spacing */
 
 
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 600;    /* match your previous h1 */
+  margin-bottom: 0.5rem;
+  color: #111;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  font-weight: 500;  /* match your previous h2 */
+  color: #555;
+  margin-bottom: 1rem;
+  
+}
+.hero-tagline {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+}
+.hero-animation {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #555;
+  border-radius: 24px;
+  padding: 16px;
+  --outer-r: 24px;
+  --p-distance: 12px;
+}
+
+.carousel-track {
+  display: flex;
+}
+
+.carousel-item {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  border: 1px solid #555;
+  border-radius: calc(var(--outer-r) - var(--p-distance));
+  background-color: #0D0716;
+  overflow: hidden;
+  cursor: grab;
+}
+
+.carousel-item:active {
+  cursor: grabbing;
+}
+
+.carousel-container.round {
+  border: 1px solid #555;
+}
+
+.carousel-item.round {
+  background-color: #0D0716;
+  position: relative;
+  bottom: .1em;
+  border: 1px solid #555;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.carousel-item-header.round {
+  padding: 0;
+  margin: 0;
+}
+
+.carousel-indicators-container.round {
+  position: absolute;
+  z-index: 2;
+  bottom: 3em;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.carousel-indicator.active {
+  background-color: #333333;
+}
+
+.carousel-indicator.inactive {
+  background-color: rgba(51, 51, 51, 0.4);
+}
+
+.carousel-item-header {
+  margin-bottom: 16px;
+  padding: 20px;
+  padding-top: 20px;
+}
+
+.carousel-icon-container {
+  display: flex;
+  height: 28px;
+  width: 28px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.carousel-icon {
+  height: 16px;
+  width: 16px;
+  color: #060010;
+}
+
+.carousel-item-content {
+  padding: 20px;
+  padding-bottom: 20px;
+}
+
+.carousel-item-title {
+  margin-bottom: 4px;
+  font-weight: 900;
+  font-size: 18px;
+  color: #fff;
+}
+
+.carousel-item-description {
+  font-size: 14px;
+  color: #fff;
+}
+
+.carousel-indicators-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.carousel-indicators {
+  margin-top: 16px;
+  display: flex;
+  width: 150px;
+  justify-content: space-between;
+  padding: 0 32px;
+}
+
+.carousel-indicator {
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 150ms;
+}
+
+.carousel-indicator.active {
+  background-color: #fff;
+}
+
+.carousel-indicator.inactive {
+  background-color: #555;
+}
+
+/* Make carousel taller */
+.carousel-wrapper {
+  height: 450px;           /* desired total height */
+}
+
+.carousel-container {
+  height: 100%;            /* fill the wrapper vertically */
+}
+
+.carousel-track,
+.carousel-item {
+  height: 98% !important; /* ensure each track and item spans full height */
+}
+
+/* If your Carousel.css uses .carousel-item-content set its height to auto or 100% as needed: */
+.carousel-item-content {
+  height: auto;
+}
+
+/* Center carousel on screen */
+.carousel-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh; /* Full viewport height */
+}
+
+.carousel-indicators-container {
+  position: absolute;
+  bottom: 20px; /* Adjust as needed */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tilted-cards-container {
+  padding: var(--section-padding-vertical) 0;
+}
+
+.tilted-cards-container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .tilted-cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .tilted-card-container {
+    width: 90vw !important;
+    max-width: 400px;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* format cards into one column */
+.tilted-cards-container.one-column {
+  flex-direction: column;
+  align-items: center;
+}
+.tilted-card-container.one-column {
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 1.5rem;
+}
+@media (max-width: 768px) {
+  .tilted-cards-container.one-column {
+    flex-direction: column;
+    align-items: center;
+  }
+  .tilted-card-container.one-column {
+    width: 90vw !important;
+    max-width: 400px;
+    margin-bottom: 1.5rem;
+  }
+}
+
+main {
+  padding-top: 4rem; /* roughly your dock-panel height + some gap */
+}
+
+/* Full-width top dock */
+.dock-outer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Panel spans entire width and centers icons */
+.dock-panel {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  background-color: #060010;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.dock-panel {
+  height: 68px;             /* same as panelHeight prop */
+  display: flex;
+  gap: 1rem;
+  /* …existing styling… */
+}
+
+/* about.jsx section */
+.about-content {
+  flex-direction: column;
+  align-items: center;
+  text-align: center; /* for mobile / column layout */
+}
+.headshot {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.exp-entry {
+  margin-bottom: 2rem;  /* adjust as needed */
+}
+
+
+/* Make skills and tools entries glossy */
+
+.skills-list li {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 0px solid #ddd;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  transition: transform 0.2s ease;
+  color: #fff;
+}
+.skills-list li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

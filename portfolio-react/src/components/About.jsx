@@ -1,83 +1,96 @@
-import React, { useEffect, useRef } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css'; // Import AOS styles
-
+import React from 'react';
+import ScrollReveal from './ScrollReveal';
+import StarBorder from './StarBorder';
 
 export default function About() {
-  const expRef = useRef(null);
-
-  useEffect(() => {
-    AOS.init({
-      duration: 600,
-      easing: 'ease-out',
-      once: false,
-      mirror: true,
-    });
-    AOS.refresh();
-  }, []);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.remove('hidden');
-          AOS.refresh();
-        } else {
-          entry.target.classList.add('hidden');
-        }
-      },
-      { threshold: 0.1 }
-    );
-    if (expRef.current) observer.observe(expRef.current);
-    return () => observer.disconnect();
-  }, []);
+  // Shared ScrollReveal settings
+  const srProps = {
+    baseOpacity: 0,
+    enableBlur: true,
+    blurStrength: 10,
+    baseRotation: 5,
+    distance: '20px',
+    origin: 'bottom',
+    duration: 600,
+    reset: false,
+  };
 
   return (
     <section id="about" className="section-container">
       <div className="about-content">
-      {/* ─── Experience & Education with fade-up on scroll ─── */}
-      <div
-        ref={expRef}
-        className="experience-education hidden"
-        data-aos="fade-up"
-        data-aos-offset="100"
-        data-aos-delay="100"
-      >
-      <h2>Experience</h2>
-      <div className="exp-list">
-        {/* Professional Experience */}
-        <div className="exp-item">
-          <h4>Prep Baseball Report – Scouting & Analytics Intern</h4>
-          <p>Los Angeles, CA · Mar 2022 – Sep 2022</p>
-          <ul>
-            <li>Conducted financial/performance valuations on 100+ players, integrating analytics to optimize recruitment.</li>
-            <li>Created data-driven reports to guide player contract investments and sponsorship decisions.</li>
-            <li>Presented player performance insights to cross-functional teams including scouts and management.</li>
-          </ul>
-        </div>
-        <div className="exp-item">
-          <h4>Optimal Sports NIL Agency – Business Intelligence Intern</h4>
-          <p>Los Angeles, CA · May 2021 – Aug 2021</p>
-          <ul>
-            <li>Developed Excel dashboards to track athlete performance metrics, optimizing future NIL deals.</li>
-            <li>Analyzed market trends to identify 15+ athlete engagement opportunities.</li>
-            <li>Collaborated with legal and operations teams to streamline sponsorship processes.</li>
-          </ul>
-        </div>
+        {/* Section header */}
+        <ScrollReveal {...srProps}>
+          <h2>Experience</h2>
+        </ScrollReveal>
+
+        {/* Job #1 Title & Date */}
+        <ScrollReveal {...srProps} delay={100}>
+          <div className="exp-entry1">
+            <h4>Prep Baseball Report – Scouting & Analytics Intern</h4>
+            <p>Los Angeles, CA · Mar 2022 – Sep 2022</p>
+          </div>
+        </ScrollReveal>
+        {/* Job #1 Descriptions */}
+        <ScrollReveal {...srProps} delay={300}>
+          <p>
+            Conducted financial/performance valuations on 100+ players,
+            integrating analytics to optimize recruitment.
+          </p>
+        </ScrollReveal>
+        <ScrollReveal {...srProps} delay={500}>
+          <p>
+            Created data-driven reports to guide player contract investments
+            and sponsorship decisions.
+          </p>
+        </ScrollReveal>
+        <ScrollReveal {...srProps} delay={700}>
+          <p>
+            Presented player performance insights to cross-functional teams
+            including scouts and management.
+          </p>
+        </ScrollReveal>
+
+        {/* Job #2 Title & Date */}
+        <ScrollReveal {...srProps} style={{marginTop: "10rem"}} delay={900}>
+          <div className="exp-entry2">
+            <h4>Optimal Sports NIL Agency – Business Intelligence Intern</h4>
+            <p>Los Angeles, CA · May 2021 – Aug 2021</p>
+          </div>
+        </ScrollReveal>
+        {/* Job #2 Descriptions */}
+        <ScrollReveal {...srProps} delay={900}>
+          <p>
+            Developed Excel dashboards to track athlete performance metrics,
+            optimizing future NIL deals.
+          </p>
+        </ScrollReveal>
+        <ScrollReveal {...srProps} delay={1000}>
+          <p>
+            Analyzed market trends to identify 15+ athlete engagement
+            opportunities.
+          </p>
+        </ScrollReveal>
+        <ScrollReveal {...srProps} delay={1200}>
+          <p>
+            Collaborated with legal and operations teams to streamline
+            sponsorship processes.
+          </p>
+        </ScrollReveal>
+
+        {/* Download Resume Button */}
+        <ScrollReveal {...srProps} delay={1400}>
+  <StarBorder
+    as="a"
+    href="/assets/resume.pdf"
+    className="btn resume-download"
+    color="blue"
+    speed="5s"
+  >
+    Download Resume
+  </StarBorder>
+</ScrollReveal>
+        
       </div>
-        {/* ─── Download Resume button, also fading up ─── */}
-        <div
-          className="resume-download"
-          data-aos="fade-up"
-          data-aos-offset="100"
-          data-aos-delay="100"
-        >
-          <a href="/assets/resume.pdf" className="btn">
-            Download Resume
-          </a>
-        </div>
-      </div>
-      </div> {/* Closing tag for about-content */}
     </section>
   );
 }

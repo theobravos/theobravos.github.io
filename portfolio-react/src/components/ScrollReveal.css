@@ -1,0 +1,55 @@
+.scroll-reveal {
+    margin: 20px 0;
+  }
+  
+  .scroll-reveal-text {
+    font-size: clamp(1.6rem, 4vw, 3rem);
+    line-height: 1.5;
+    font-weight: 600;
+  }
+  
+  .word {
+    display: inline-block;
+  }
+
+
+/* space out the sections between job 1 and 2 */
+
+.scroll-reveal-text .word:not(:last-child) {
+    margin-right: 0.2em;
+  }
+  
+  .scroll-reveal-text .word span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  .scroll-reveal-text .word.visible span {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+/* space between each experience entry */
+.scroll-reveal-text .word:not(:last-child) {
+    margin-right: 0.2em;
+  }
+  
+  .scroll-reveal-text .word span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  .scroll-reveal-text .word.visible span {
+    opacity: 1;
+    transform: translateY(0);
+  }
+/* space between each experience entry */
+
+
+.exp-entry2 {
+    margin-top: 8rem;  /* adjust as needed */
+  }

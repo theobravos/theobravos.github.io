@@ -1,5 +1,5 @@
 import React from 'react';
-
+import StarBorder from './StarBorder';
 export default function Contact() {
   return (
     <section
@@ -33,10 +33,13 @@ export default function Contact() {
           Message
           <textarea name="message" rows="5" required />
         </label>
-        
-        <button type="submit" className="btn">
-          Send Message
-        </button>
+        <StarBorder 
+        as="button"
+        className="submit-button"
+        color="cyan"
+        speed="9s">
+          <span>Send Message</span>
+        </StarBorder>
       </form>
     </section>
   );
