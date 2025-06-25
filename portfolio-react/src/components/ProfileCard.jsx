@@ -281,7 +281,7 @@ const ProfileCardComponent = ({
                 </button>
                 <button
                   className="github-btn"
-                  onClick={() => window.open(`httops://github.com/theobravos`, "_blank")}
+                  onClick={() => window.open(`https://github.com/theobravos`, "_blank")}
                   style={{ pointerEvents: "auto" }}
                   type="button"
                   aria-label={`Contact ${name || "user"}`}

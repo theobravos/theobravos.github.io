@@ -11,7 +11,7 @@ export default function Hero() {
         showUserInfo={true}
         enableTilt={true}
       />
-      <div className="action-buttons flex space-x-4 mt-4">
+      <div className="action-buttons hidden">
         <a
           href="https://linkedin.com/in/theobravos"
           target="_blank"
@@ -35,3 +35,4 @@ export default function Hero() {
     </div>
   );
 }
+

@@ -221,8 +221,24 @@
   gap: 0.75rem;
   pointer-events: auto;
   margin-left: 0.5rem;
+  background-color: transparent; /* Make the buttons fully transparent */
+  border: none; /* Remove any border */
+  box-shadow: none; /* Remove any shadow */
+  display: none;
 }
   
+  .pc-user-info:hover .action-buttons {
+    display: flex; /* Show buttons on hover */
+  }
+
+  .pc-user-info .action-buttons button {
+    background-color: transparent; /* Make the buttons fully transparent */
+    border: none; /* Remove any border */
+    box-shadow: none; /* Remove any shadow */
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: transform 0.2s ease;
+  }
   .pc-user-details {
     display: flex;
     align-items: center;
@@ -584,3 +600,5 @@
   border: 2px solid #ccc; /* Add a border to the buttons */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
 }
+
+
