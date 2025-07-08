@@ -623,6 +623,7 @@
     }
   },
   "dependencies": {
+    "framer-motion": "^12.23.0",
     "lucide-react": "^0.513.0",
     "react-scripts": "^5.0.1"
   },

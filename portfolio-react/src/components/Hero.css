@@ -1,0 +1,47 @@
+html, body, #root {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .hero-section {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* vertical centering */
+    align-items: center;      /* horizontal centering */
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+  
+  /* Heading stays tight at top */
+  .hero-heading {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+  }
+  
+  /* This footer block holds exactly the space your subtitle+icons need */
+  .hero-footer {
+    height: 8rem;             /* adjust this if your subtitle+icons need more/less space */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  /* Subtitle styling */
+  .hero-subheading {
+    font-size: 2rem;
+    color: #555;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 2rem;      /* breathing room before icons */
+  }
+  
+  /* Icon row */
+  .social-links {
+    display: flex;
+    gap: 1.5rem;
+  }
