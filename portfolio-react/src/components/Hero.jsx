@@ -1,48 +1,48 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';     // ← import motion
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import './Hero.css';
 import BlurText from './BlurText';
 import { LinkedinIcon, GithubIcon, Mail } from 'lucide-react';
 
 export default function Hero() {
-  const [showSubtitle, setShowSubtitle] = useState(false);
+  const [showFooter, setShowFooter] = useState(false);
 
-  // 1) container variant will stagger its children
+  // → fire the footer in the middle of the header’s animation
+  useEffect(() => {
+    const t = setTimeout(() => setShowFooter(true), 400); 
+    return () => clearTimeout(t);
+  }, []);
+
+  // icon fade-up variants
   const iconsContainer = {
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: 0.2,      // space between each icon’s entrance
-        delayChildren: 0.3         // start after subtitle animates
+        staggerChildren: 0.2,
+        // no delayChildren here, since the entire footer is gated by showFooter
       }
     }
   };
-
-  // 2) each icon will fade up
   const iconItem = {
     hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { type: 'spring', stiffness: 120, damping: 14 }
-    }
+    visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 120, damping: 14 } }
   };
 
   return (
     <div className="hero-section">
+      {/* Header always animates on mount */}
       <BlurText
         text="Theo Bravos"
         delay={150}
         animateBy="words"
         direction="top"
         className="hero-heading"
-        onAnimationComplete={() => {
-          setTimeout(() => setShowSubtitle(true), 5);
-        }}
       />
 
+      {/* Footer container is always present, so no layout jump */}
       <div className="hero-footer">
-        {showSubtitle && (
+        {/* subtitle only mounts after 400ms */}
+        {showFooter && (
           <BlurText
             text="Data Scientist"
             delay={150}
@@ -52,42 +52,25 @@ export default function Hero() {
           />
         )}
 
-        {/* 3) wrap your links in a motion.div */}
-        <motion.div
-          className="social-links"
-          variants={iconsContainer}
-          initial="hidden"
-          animate={showSubtitle ? 'visible' : 'hidden'}
-        >
-          {/* 4) wrap each <a> in motion.a with the item variant */}
-          <motion.a
-            variants={iconItem}
-            href="https://linkedin.com/in/theobravos"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="LinkedIn"
+        {/* icons also gated by showFooter */}
+        {showFooter && (
+          <motion.div
+            className="social-links"
+            variants={iconsContainer}
+            initial="hidden"
+            animate="visible"
           >
-            <LinkedinIcon size={32} />
-          </motion.a>
-
-          <motion.a
-            variants={iconItem}
-            href="https://github.com/theobravos"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="GitHub"
-          >
-            <GithubIcon size={32} />
-          </motion.a>
-
-          <motion.a
-            variants={iconItem}
-            href="mailto:tbravos@usc.edu"
-            aria-label="Email"
-          >
-            <Mail size={32} />
-          </motion.a>
-        </motion.div>
+            <motion.a variants={iconItem} href="https://linkedin.com/in/theobravos" target="_blank" rel="noreferrer">
+              <LinkedinIcon size={32} />
+            </motion.a>
+            <motion.a variants={iconItem} href="https://github.com/theobravos" target="_blank" rel="noreferrer">
+              <GithubIcon size={32} />
+            </motion.a>
+            <motion.a variants={iconItem} href="mailto:tbravos@usc.edu">
+              <Mail size={32} />
+            </motion.a>
+          </motion.div>
+        )}
       </div>
     </div>
   );
