@@ -36,7 +36,9 @@ export default function Hero() {
         animateBy="words"
         direction="top"
         className="hero-heading"
-        onAnimationComplete={() => setShowSubtitle(true)}
+        onAnimationComplete={() => {
+          setTimeout(() => setShowSubtitle(true), 5);
+        }}
       />
 
       <div className="hero-footer">
