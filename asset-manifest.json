@@ -1,5 +1,6 @@
 {
   "files": {
+<<<<<<< HEAD
     "main.css": "/static/css/main.1afa99d0.css",
     "main.js": "/static/js/main.97414364.js",
     "index.html": "/index.html",
@@ -9,5 +10,16 @@
   "entrypoints": [
     "static/css/main.1afa99d0.css",
     "static/js/main.97414364.js"
+=======
+    "main.css": "/static/css/main.1731e227.css",
+    "main.js": "/static/js/main.2165c21d.js",
+    "index.html": "/index.html",
+    "main.1731e227.css.map": "/static/css/main.1731e227.css.map",
+    "main.2165c21d.js.map": "/static/js/main.2165c21d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1731e227.css",
+    "static/js/main.2165c21d.js"
+>>>>>>> parent of 64a7350 (updates)
   ]
 }
