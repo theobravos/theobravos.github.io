@@ -10,6 +10,7 @@ import Contact from './components/Contact';
 import Footer  from './components/Footer';
 import ProfileCard from './components/ProfileCard'; 
 
+
 const menuItems = [
   {
     icon: <VscHome size={24} />,

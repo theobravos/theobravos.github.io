@@ -1,5 +1,7 @@
+// Hero.jsx
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { ChevronDown } from 'lucide-react';
 import './Hero.css';
 import BlurText from './BlurText';
 import { LinkedinIcon, GithubIcon, Mail } from 'lucide-react';
@@ -7,41 +9,28 @@ import { LinkedinIcon, GithubIcon, Mail } from 'lucide-react';
 export default function Hero() {
   const [showFooter, setShowFooter] = useState(false);
 
-  // → fire the footer in the middle of the header’s animation
   useEffect(() => {
-    const t = setTimeout(() => setShowFooter(true), 400); 
+    const t = setTimeout(() => setShowFooter(true), 500);
     return () => clearTimeout(t);
   }, []);
 
-  // icon fade-up variants
-  const iconsContainer = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.2,
-        // no delayChildren here, since the entire footer is gated by showFooter
-      }
-    }
-  };
-  const iconItem = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 120, damping: 14 } }
+  const scrollToProjects = () => {
+    document
+      .getElementById('projects')
+      .scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
     <div className="hero-section">
-      {/* Header always animates on mount */}
       <BlurText
-        text="Theo Bravos"
-        delay={150}
+        text="Hi, I'm Theo Bravos"
+        delay={140}
         animateBy="words"
         direction="top"
         className="hero-heading"
       />
 
-      {/* Footer container is always present, so no layout jump */}
       <div className="hero-footer">
-        {/* subtitle only mounts after 400ms */}
         {showFooter && (
           <BlurText
             text="Data Scientist"
@@ -52,26 +41,31 @@ export default function Hero() {
           />
         )}
 
-        {/* icons also gated by showFooter */}
         {showFooter && (
           <motion.div
             className="social-links"
-            variants={iconsContainer}
+            variants={{
+              hidden: {},
+              visible: { transition: { staggerChildren: 0.2 } },
+            }}
             initial="hidden"
             animate="visible"
           >
-            <motion.a variants={iconItem} href="https://linkedin.com/in/theobravos" target="_blank" rel="noreferrer">
-              <LinkedinIcon size={32} />
-            </motion.a>
-            <motion.a variants={iconItem} href="https://github.com/theobravos" target="_blank" rel="noreferrer">
-              <GithubIcon size={32} />
-            </motion.a>
-            <motion.a variants={iconItem} href="mailto:tbravos@usc.edu">
-              <Mail size={32} />
-            </motion.a>
+            {/* your icons */}
           </motion.div>
         )}
       </div>
+
+      {/* ←— add this */}
+      <motion.div
+        className="scroll-hint"
+        onClick={scrollToProjects}
+        initial={{ opacity: 0, y: 0 }}
+        animate={{ opacity: [0, 1, 0], y: [0, 10, 0] }}
+        transition={{ duration: 2, repeat: Infinity }}
+      >
+        <ChevronDown size={60} />
+      </motion.div>
     </div>
   );
 }
