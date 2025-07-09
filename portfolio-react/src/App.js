@@ -41,12 +41,6 @@ const menuItems = [
 function App() {
   return (
     <>
-      <Dock     
-        items={menuItems}
-        panelHeight={68}
-        panelWidth={300}
-        baseItemSize={50}
-        magnification={70}/>
       <Hero />
       <Projects />
       <About />
