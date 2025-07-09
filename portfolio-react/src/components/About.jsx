@@ -78,7 +78,7 @@ export default function About() {
         </ScrollReveal>
 
         {/* Download Resume Button */}
-        <ScrollReveal {...srProps} delay={1200}>
+        <ScrollReveal {...srProps} delay={1100}>
           <ShinyText
             as="a"
             href="/assets/resume.pdf"
