@@ -1008,3 +1008,35 @@ main {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Ensure the body and html take up the full height and have a dark background */
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #000; /* Fallback background color */
+  color: #fff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Container for the whole app */
+.app-container {
+  position: relative;
+  width: 100%;
+}
+
+/* This places the iridescence canvas in the background */
+.iridescence-background {
+  position: fixed; /* Fixes it to the viewport */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; /* Puts it behind all other content */
+}
+
+/* This is where your page's components will live */
+.main-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 2rem 0; /* Add some padding so content doesn't touch the edges */
+}

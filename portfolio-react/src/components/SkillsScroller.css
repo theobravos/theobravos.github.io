@@ -1,0 +1,27 @@
+/* src/components/SkillsScroller.css */
+
+.scroller {
+    width: 100%;
+    overflow: hidden;
+    cursor: grab; /* Indicates the element is interactive */
+    -webkit-mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
+    mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
+  }
+  
+  /* Change cursor to 'grabbing' when the user is actively dragging */
+  .scroller.dragging {
+    cursor: grabbing;
+  }
+  
+  .scroller__inner {
+    display: flex;
+    white-space: nowrap;
+  }
+  
+  /* Styling for the text itself */
+  .scroller__inner span {
+    font-size: 3rem;
+    color: #060010;
+    font-weight: bold;
+    padding: 0 2rem;
+  }

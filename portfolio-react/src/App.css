@@ -8,14 +8,13 @@ body {
   font-family: "Inter", sans-serif;
   line-height: 1.6;
   color: #333;
-  background: #f8f9fa;
+  background: transparent;
 }
 
 /* 1. HEADER / NAVIGATION */
 header {
   position: sticky;
   top: 0;
-  background: #ffffff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .nav-container {
@@ -119,7 +118,7 @@ header {
 }
 .project-info p {
   flex-grow: 1;
-  color: #555;
+  color: #ffffff;
   margin-bottom: 1rem;
 }
 .project-link {
@@ -182,3 +181,1117 @@ header {
 }
 
 
+/* Ensure the body and html take up the full height and have a dark background */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Container for the whole app */
+.app-container {
+  position: relative;
+  width: 100%;
+}
+
+/* This places the iridescence canvas in the background */
+.iridescence-background {
+  position: fixed; /* Fixes it to the viewport */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; /* Puts it behind all other content */
+}
+
+/* This is where your page's components will live */
+.main-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 2rem 0; /* Add some padding so content doesn't touch the edges */
+}
+
+
+/* src/components/Projects.css */
+
+.projects-section {
+  background-color: transparent;
+  padding: 4rem 1rem;
+}
+
+.projects-section .section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: rgba(26, 26, 26, 0.7);
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project-card {
+  background-color: rgba(26, 26, 26, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.project-image-container {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #222;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.project-title {
+  font-size: 1.25rem;
+  color: #f0f0f0;
+  margin: 0;
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.project-links a {
+  color: #ffffff;
+  font-size: 1.2rem;
+  transition: color 0.2s ease;
+}
+
+.project-links a:hover {
+  color: #fff;
+}
+
+.project-description {
+  color: #ffffff;
+  font-size: 1rem;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+.project-footer {
+  margin-top: 1.5rem;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-pill {
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ddd;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.project-description {
+  color: #ddd; /* Brighter text color */
+  font-size: 1rem;
+  line-height: 1.6;
+  flex-grow: 1;
+  /* Add a shadow to improve contrast against the animated background */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.project-card {
+  /* INCREASED OPACITY: Changed from 0.7 to 0.85 for better readability */
+  background-color: rgba(26, 26, 26, 0.85);
+  
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* src/components/Projects.css */
+
+.projects-section {
+  background-color: transparent;
+  padding: 4rem 1rem;
+}
+
+/* --- Title Styles & Animation --- */
+.title-container {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  margin-bottom: 3rem;
+}
+
+.title-container.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.projects-section .section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: rgb(75, 72, 72);
+  margin: 0;
+}
+
+/* --- Project Grid & Card Layout --- */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project-card {
+  background-color: rgba(26, 26, 26, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  /* --- CARD FADE-IN ANIMATION --- */
+  opacity: 0;
+  /* transform: translateY(30px); <-- REMOVED this line */
+  transition: opacity 1.2s ease-out, border-color 0.3s ease; /* Only transition opacity now */
+}
+
+.project-card.is-visible {
+  opacity: 1;
+  /* transform: translate(0, 0); <-- REMOVED this line */
+}
+/* --- END CARD ANIMATION --- */
+
+.project-card:hover {
+  transform: translateY(-5px); /* The hover effect still works */
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.project-image-container {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #222;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- Card Content Styling --- */
+.project-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.project-title {
+  font-size: 1.25rem;
+  color: #fff;
+  margin: 0;
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.project-links a {
+  color: #aaa;
+  font-size: 1.2rem;
+  transition: color 0.2s ease;
+}
+
+.project-links a:hover {
+  color: #fff;
+}
+
+.project-description {
+  color: #e5e5e5;
+  font-size: 1rem;
+  line-height: 1.6;
+  flex-grow: 1;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.project-footer {
+  margin-top: 1.5rem;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-pill {
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+/* --- Section Layout & Title --- */
+.skills-section {
+  padding: 4rem 1rem 6rem;
+  background-color: transparent;
+}
+
+.title-container {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  margin-bottom: 3rem;
+}
+
+.title-container.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skills-section .section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #aaa;
+  margin: 0;
+}
+
+/* --- Grid & Card Styling --- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skill-card {
+  background-color: rgba(26, 26, 26, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  border-color: #007bff; /* Blue accent color */;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.card-icon {
+  color: #007bff; /* Blue accent color */
+  flex-shrink: 0;
+}
+
+.category-title {
+  font-size: 1.25rem;
+  color: #f0f0f0;
+  font-weight: 600;
+}
+
+/* --- Skills List Styling --- */
+.skills-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+/* --- Section Layout & Title --- */
+.skills-section {
+  padding: 4rem 1rem 6rem;
+  background-color: transparent;
+}
+
+.title-container {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  margin-bottom: 3rem;
+}
+
+.title-container.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skills-section .section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #aaa;
+  margin: 0;
+}
+
+/* --- Grid & Card Styling --- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skill-card {
+  background-color: rgba(26, 26, 26, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  border-color: #007bff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.card-icon {
+  color: #007bff;
+  flex-shrink: 0;
+}
+
+.category-title {
+  font-size: 1.25rem;
+  color: #f0f0f0;
+  font-weight: 600;
+}
+
+/* --- Skills List Styling --- */
+.skills-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+.title-container {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  margin-bottom: 3rem;
+}
+
+.title-container.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skills-section .section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #aaa;
+  margin: 0;
+}
+
+/* --- Grid & Card Styling --- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skill-card {
+  background-color: rgba(26, 26, 26, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  border-color: #007bff;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.card-icon {
+  color: #007bff;
+  flex-shrink: 0;
+}
+
+.category-title {
+  font-size: 1.25rem;
+  color: #f0f0f0;
+  font-weight: 600;
+}
+
+/* --- Skills List Styling --- */
+.skills-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+
+/* --- Section Layout & Title --- */
+.skills-section {
+  padding: 4rem 1rem 6rem;
+  background-color: transparent;
+}
+
+.title-container {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  margin-bottom: 3rem;
+}
+
+.title-container.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skills-section .section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #aaa;
+  margin: 0;
+}
+
+/* --- Grid & Card Styling --- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skill-card {
+  background-color: rgba(26, 26, 26, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  border-color: #007bff;
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.2);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.card-icon {
+  color: #007bff;
+  flex-shrink: 0;
+}
+
+.category-title {
+  font-size: 1.25rem;
+  color: #f0f0f0;
+  font-weight: 600;
+}
+
+/* --- Skills List Styling --- */
+.skills-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skills-list li {
+  position: relative;
+  margin-bottom: 0.75rem;
+  color: #e5e5e5;
+  font-size: 1rem;
+
+  /* ensure no leftover background */
+  background: none !important;
+  border: none;
+  padding: 0;
+  padding-left: 1.5rem;
+}
+
+/* Custom bullet point */
+.skills-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #007bff;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+/* src/components/Skills.css */
+
+/* --- Section Layout & Title --- */
+.skills-section {
+  padding: 4rem 1rem 6rem;
+  background-color: transparent;
+}
+
+.title-container {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  margin-bottom: 3rem;
+}
+
+.title-container.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skills-section .section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: rgba(26, 26, 26, 0.85);
+  margin: 0;
+}
+
+/* --- Grid & Card Styling --- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skill-card {
+  background-color: rgba(26, 26, 26, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  border-color: #007bff;
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.2);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.card-icon {
+  color: #007bff;
+  flex-shrink: 0;
+}
+
+.category-title {
+  font-size: 1.25rem;
+  color: #f0f0f0;
+  font-weight: 600;
+}
+
+/* --- UPDATED Skills List Styling --- */
+.skills-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  /* This creates the wrapping grid of pills */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.skills-list li {
+  color: #e5e5e5;
+  font-size: 0.9rem;
+  
+  /* These properties create the pill effect */
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  padding: 0.3rem 0.8rem;
+}
+
+/* The custom bullet point is no longer needed */
+.skills-list li::before {
+  content: none;
+}
+
+/* --- Section Layout & Title --- */
+.skills-section {
+  padding: 4rem 1rem 6rem;
+  background-color: transparent;
+}
+
+.title-container {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  margin-bottom: 3rem;
+}
+
+.title-container.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skills-section .section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.1);
+  margin: 0;
+}
+
+/* --- Grid & Card Styling --- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skill-card {
+  background-color: rgba(26, 26, 26, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  border-color: #007bff;
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.2);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.card-icon {
+  color: #007bff;
+  flex-shrink: 0;
+}
+
+.category-title {
+  font-size: 1.25rem;
+  color: #f0f0f0;
+  font-weight: 600;
+}
+
+/* --- Skills List Styling --- */
+.skills-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.skills-list li {
+  color: #e5e5e5;
+  font-size: 0.9rem;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  padding: 0.3rem 0.8rem;
+  
+  /* Add transition for the hover effect */
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* --- NEW HOVER STYLE --- */
+.skills-list li:hover {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: #fff; /* Make text white for better contrast */
+  cursor: default;
+}
+
+
+.projects-section {
+  background-color: transparent;
+  padding: 4rem 1rem;
+}
+
+/* --- Title Styles & Animation --- */
+.title-container {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  margin-bottom: 3rem;
+}
+
+.title-container.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.projects-section .section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: rgba(26, 26, 26, 0.85);
+  margin: 0;
+}
+
+/* --- Project Grid & Card Layout --- */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project-card {
+  background-color: rgba(26, 26, 26, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  opacity: 0;
+  /* UPDATED THIS LINE: Added 'transform' to the transition list */
+  transition: opacity 1.2s ease-out, border-color 0.3s ease, transform 0.3s ease;
+}
+
+.project-card.is-visible {
+  opacity: 1;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.project-image-container {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #222;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- Card Content Styling --- */
+.project-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.project-title {
+  font-size: 1.25rem;
+  color: #fff;
+  margin: 0;
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.project-links a {
+  color: #aaa;
+  font-size: 1.2rem;
+  transition: color 0.2s ease;
+}
+
+.project-links a:hover {
+  color: #fff;
+}
+
+.project-description {
+  color: #e5e5e5;
+  font-size: 1rem;
+  line-height: 1.6;
+  flex-grow: 1;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.project-footer {
+  margin-top: 1.5rem;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-pill {
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #e5e5e5;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+
+.skills-section .section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: rgba(26, 26, 26, 0.85);
+  margin: 0;
+}
+
+/* ==========================================================================
+   5. Skills Section
+   ========================================================================== */
+   .skills-section {
+    padding: 4rem 1rem 6rem;
+    background-color: transparent;
+  }
+  
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .skill-card {
+    background-color: rgba(26, 26, 26, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 2rem;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+  }
+  
+  .skill-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .skill-card:hover {
+    transform: translateY(-5px);
+    border-color: #007bff;
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.2);
+  }
+  
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .card-icon { color: #007bff; }
+  .category-title { font-size: 1.25rem; color: #f0f0f0; }
+  
+  .skills-pills-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* Increased gap for more separation */
+    gap: 0.8rem;
+  }
+  
+  .skill-pill {
+    color: #e5e5e5;
+    font-size: 0.9rem;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+    padding: 0.3rem 0.8rem;
+    transition: all 0.3s ease;
+  }
+  
+  .skill-pill:hover {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #fff;
+  }
+  
+  
+  
+  .contact-section {
+    margin-top: 10rem;
+    padding: 4rem 1rem 6rem;
+    background-color: transparent;
+    min-height: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Container for the animated links */
+  .contact-links-container {
+    display: flex;
+    gap: 3rem; /* Space between the icons */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  
+  .contact-links-container.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Styling for the icon links */
+  .contact-links-container a {
+    color: rgba(26, 26, 26, 0.85);
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .contact-links-container a:hover {
+    color: rgba(26, 26, 26, 0.85);
+    transform: scale(1.1);
+  }
+
+
+.footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: rgba(26, 26, 26, 0);
+  color: #000000;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(114, 111, 111, 0);
+}

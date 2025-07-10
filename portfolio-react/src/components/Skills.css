@@ -1,0 +1,180 @@
+/* src/components/Skills.css */
+
+/* --- Section Layout & Title --- */
+.skills-section {
+  padding: 4rem 1rem 6rem;
+  background-color: transparent;
+}
+
+.title-container {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  margin-bottom: 3rem;
+}
+
+.title-container.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skills-section .section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: rgba(26, 26, 26, 0.85);
+  margin: 0;
+}
+
+/* --- Grid & Card Styling --- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skill-card {
+  background-color: rgba(26, 26, 26, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  border-color: #007bff;
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.2);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.card-icon {
+  color: #007bff;
+  flex-shrink: 0;
+}
+
+.category-title {
+  font-size: 1.25rem;
+  color: #f0f0f0;
+  font-weight: 600;
+}
+
+/* --- UPDATED Skills List Styling --- */
+.skills-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  /* This creates the wrapping grid of pills */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.skills-list li {
+  color: #e5e5e5;
+  font-size: 0.9rem;
+  
+  /* These properties create the pill effect */
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  padding: 0.3rem 0.8rem;
+}
+
+/* The custom bullet point is no longer needed */
+.skills-list li::before {
+  content: none;
+}
+
+/* ==========================================================================
+   5. Skills Section
+   ========================================================================== */
+   .skills-section {
+    padding: 4rem 1rem 6rem;
+    background-color: transparent;
+  }
+  
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem; /* Increased space between cards */
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .skill-card {
+    background-color: rgba(26, 26, 26, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px; /* Slightly more rounded corners */
+    padding: 2rem; /* Increased padding inside the card */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+  }
+  
+  .skill-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .skill-card:hover {
+    transform: translateY(-5px);
+    border-color: #007bff;
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.2);
+  }
+  
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .card-icon { color: #007bff; }
+  .category-title { font-size: 1.25rem; color: #f0f0f0; }
+  
+  .skills-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .skills-list li {
+    position: relative;
+    margin-bottom: 1rem; /* Increased space between skills */
+    color: #e5e5e5;
+    font-size: 1rem;
+    background: none;
+    border: none;
+    padding: 0;
+    padding-left: 1.8rem; /* Increased space for bullet point */
+  }
+  
+  .skills-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #007bff;
+    font-size: 1.2rem;
+    line-height: 1.1; /* Adjusted for better vertical alignment */
+  }

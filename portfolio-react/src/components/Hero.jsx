@@ -4,21 +4,44 @@ import { ChevronDown, LinkedinIcon, GithubIcon, Mail } from 'lucide-react';
 import './Hero.css';
 import BlurText from './BlurText';
 
+// 1. Define the array of rotating subheadings
+const SUBHEADINGS = [
+  "Data Scientist",
+  "D1 Athlete",
+  "Data Engineer",
+  "Business Analyst"
+];
+
 export default function Hero() {
   const [showFooter, setShowFooter] = useState(false);
+  // 2. Add state to track the current subheading index
+  const [subheadingIndex, setSubheadingIndex] = useState(0);
 
   useEffect(() => {
     const t = setTimeout(() => setShowFooter(true), 500);
     return () => clearTimeout(t);
   }, []);
 
-  const scrollToProjects = () => {
+  // 3. Add an effect to cycle through the subheadings
+  useEffect(() => {
+    // Only start the loop after the initial footer animation
+    if (!showFooter) return;
+
+    const intervalId = setInterval(() => {
+      setSubheadingIndex(prevIndex => (prevIndex + 1) % SUBHEADINGS.length);
+    }, 4000); // Rotate every 4 seconds (4000ms)
+
+    // Clear the interval when the component unmounts
+    return () => clearInterval(intervalId);
+  }, [showFooter]);
+
+
+  const scrollToAbout = () => {
     document
-      .getElementById('projects')
-      .scrollIntoView({ behavior: 'smooth' });
+      .getElementById('about')
+      ?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  // re-add your icon framer-motion variants
   const iconsContainer = {
     hidden: {},
     visible: {
@@ -46,9 +69,11 @@ export default function Hero() {
 
       <div className="hero-footer">
         {showFooter && (
+          // 4. Update the BlurText component to be dynamic
           <BlurText
-            text="Data Scientist"
-            delay={150}
+            key={subheadingIndex} // This key is crucial to re-trigger the animation
+            text={SUBHEADINGS[subheadingIndex]}
+            delay={170}
             animateBy="words"
             direction="top"
             className="hero-subheading"
@@ -85,10 +110,9 @@ export default function Hero() {
         )}
       </div>
 
-      {/* your scroll‐hint */}
       <motion.div
         className="scroll-hint"
-        onClick={scrollToProjects}
+        onClick={scrollToAbout}
         initial={{ opacity: 0, y: 0 }}
         animate={{ opacity: [0, 1, 0], y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}

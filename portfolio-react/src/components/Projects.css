@@ -1,0 +1,278 @@
+/* src/components/Projects.css */
+
+.projects-section {
+  background-color: transparent;
+  padding: 4rem 1rem;
+}
+
+/* --- Title Styles & Animation --- */
+.title-container {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  margin-bottom: 3rem;
+}
+
+.title-container.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.projects-section .section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #aaa;
+  margin: 0;
+}
+
+/* --- Project Grid & Card Layout --- */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project-card {
+  background-color: rgba(26, 26, 26, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  /* --- CARD FADE-IN ANIMATION --- */
+  opacity: 0;
+  /* transform: translateY(30px); <-- REMOVED this line */
+  transition: opacity 1.2s ease-out, border-color 0.3s ease; /* Only transition opacity now */
+}
+
+.project-card.is-visible {
+  opacity: 1;
+  /* transform: translate(0, 0); <-- REMOVED this line */
+}
+/* --- END CARD ANIMATION --- */
+
+.project-card:hover {
+  transform: translateY(-5px); /* The hover effect still works */
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.project-image-container {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #222;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- Card Content Styling --- */
+.project-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.project-title {
+  font-size: 1.25rem;
+  color: #fff;
+  margin: 0;
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.project-links a {
+  color: #aaa;
+  font-size: 1.2rem;
+  transition: color 0.2s ease;
+}
+
+.project-links a:hover {
+  color: #fff;
+}
+
+.project-description {
+  color: #e5e5e5;
+  font-size: 1rem;
+  line-height: 1.6;
+  flex-grow: 1;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.project-footer {
+  margin-top: 1.5rem;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-pill {
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #e5e5e5;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.projects-section {
+  background-color: transparent;
+  padding: 4rem 1rem;
+}
+
+/* --- Title Styles & Animation --- */
+.title-container {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  margin-bottom: 3rem;
+}
+
+.title-container.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.projects-section .section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #aaa;
+  margin: 0;
+}
+
+/* --- Project Grid & Card Layout --- */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project-card {
+  background-color: rgba(26, 26, 26, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  opacity: 0;
+  /* UPDATED THIS LINE: Added 'transform' to the transition list */
+  transition: opacity 1.2s ease-out, border-color 0.3s ease, transform 0.3s ease;
+}
+
+.project-card.is-visible {
+  opacity: 1;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.project-image-container {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #222;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- Card Content Styling --- */
+.project-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.project-title {
+  font-size: 1.25rem;
+  color: #fff;
+  margin: 0;
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.project-links a {
+  color: #aaa;
+  font-size: 1.2rem;
+  transition: color 0.2s ease;
+}
+
+.project-links a:hover {
+  color: #fff;
+}
+
+.project-description {
+  color: #e5e5e5;
+  font-size: 1rem;
+  line-height: 1.6;
+  flex-grow: 1;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.project-footer {
+  margin-top: 1.5rem;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-pill {
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #e5e5e5;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}

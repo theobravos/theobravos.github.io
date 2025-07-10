@@ -1,46 +1,48 @@
+// src/components/Contact.jsx
+
 import React from 'react';
-import StarBorder from './StarBorder';
-export default function Contact() {
+import useIntersectionObserver from './useIntersectionObserver';
+import { Linkedin, Mail } from 'lucide-react'; // Using lucide-react icons
+
+const AnimatedTitle = ({ children }) => {
+  const [ref, isVisible] = useIntersectionObserver({ threshold: 0.5 });
   return (
-    <section
-      id="contact"
-      className="section-container"
-      data-aos="fade-up"
-      data-aos-offset="100"
-      data-aos-delay="100"
-    >
-      <h2>Let’s Connect</h2>
-      <form
-        name="contact"
-        method="POST"
-        data-netlify="true"
-        className="contact-form"
+    <div ref={ref} className={`title-container ${isVisible ? 'is-visible' : ''}`}>
+      {children}
+    </div>
+  );
+};
+
+export default function Contact() {
+  // Re-purposed the observer for the new links container
+  const [linksRef, areLinksVisible] = useIntersectionObserver({ threshold: 0.5 });
+
+  return (
+    <section id="contact" className="contact-section">
+      <AnimatedTitle>
+        <h2 className="section-title">Let’s Connect!</h2>
+      </AnimatedTitle>
+
+      {/* Replaced the form with a simple icon link container */}
+      <div
+        ref={linksRef}
+        className={`contact-links-container ${areLinksVisible ? 'is-visible' : ''}`}
       >
-        {/* Netlify form hidden input */}
-        <input type="hidden" name="form-name" value="contact" />
-        
-        <label>
-          Name
-          <input type="text" name="name" required />
-        </label>
-        
-        <label>
-          Email
-          <input type="email" name="email" required />
-        </label>
-        
-        <label>
-          Message
-          <textarea name="message" rows="5" required />
-        </label>
-        <StarBorder 
-        as="button"
-        className="submit-button"
-        color="cyan"
-        speed="9s">
-          <span>Send Message</span>
-        </StarBorder>
-      </form>
+        <a 
+          href="https://linkedin.com/in/theobravos" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+        >
+          <Linkedin size={48} />
+        </a>
+        <a 
+          href="mailto:tbravos@usc.edu"
+          aria-label="Email"
+        >
+          <Mail size={48} />
+        </a>
+      </div>
     </section>
   );
 }
