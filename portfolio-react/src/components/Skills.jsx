@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaBrain, FaDatabase, FaChartBar, FaCogs } from 'react-icons/fa';
+import { FaBrain, FaDatabase, FaChartBar, FaCogs, FaReact } from 'react-icons/fa';
 import useIntersectionObserver from './useIntersectionObserver';
 
 // Note: The CSS import has been removed because we will import a single App.css in your main App.js file.
@@ -35,6 +35,11 @@ const skillCategories = [
     icon: <FaCogs size={24} />,
     skills: ['Git', 'GitHub', 'Docker', 'AWS (S3, EC2)'],
   },
+  {
+    title: 'Front-End Tech Stack',
+    icon: <FaReact size={24} />,
+    skills: ['HTML5','CSS','React', 'JavaScript'],
+  }
 ];
 
 const AnimatedTitle = ({ children }) => {

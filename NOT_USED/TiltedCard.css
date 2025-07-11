@@ -1,0 +1,233 @@
+.tilted-card-container {
+    position: relative;
+    perspective: 800px;
+    margin: 1rem;
+    cursor: pointer;
+    will-change: transform;
+  }
+  .tilted-card-container img {
+    display: block;
+    width: 105%;
+    height: 105%;
+    object-fit: cover;
+    border-radius: 8px;
+
+/* tilted card overlay at top */
+  }
+  .tilted-card-overlay1 {
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5rem 1rem;
+    background: rgba(2, 2, 2, 0.2);
+    color: #fff;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 9999px;
+    font-size: 0.9rem;
+    text-align: center;
+    opacity: 0;
+  }
+  .tilted-card-tooltip {
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.7);
+    color: #fff;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.85rem;
+    border-radius: 4px;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .tilted-card-container:hover .tilted-card-tooltip {
+    opacity: 0;
+  }
+  .tilted-card-mobile-warning {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    background: rgba(255,255,255,0.9);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+  }
+
+
+/* wider cards */
+
+.tilted-cards-container {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  @media (max-width: 768px) {
+    .tilted-cards-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    .tilted-card-container {
+      width: 90vw !important;
+      max-width: 400px;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+/* format cards into one column */
+
+.tilted-cards-container.one-column {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .tilted-card-container.one-column {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 1.5rem;
+  }
+  
+  @media (max-width: 768px) {
+    .tilted-card-container.one-column {
+      width: 90vw !important;
+      max-width: none;
+    }
+  }
+
+/* Title overlay card at the top of card */
+
+.tilted-overlay-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tilted-overlay-content .overlay-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tilted-overlay-content .overlay-desc {
+  margin: 0.25rem 0 0;
+  font-size: 0.85rem;
+  color: #eee;
+  text-align: center;
+  max-width: 90%; /* Allow more width for the description */
+  max-height: none; /* Remove height restriction */
+  overflow: visible; /* Allow the text to fully display */
+  opacity: 1; /* Ensure the text is visible */
+  transition: none; /* Remove transition for immediate visibility */
+  white-space: normal; /* Allow text to wrap */
+}
+
+.tilted-overlay-content {
+    position: absolute;
+    top: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 9999px;
+    padding: 0.5rem 5rem;      /* wider horizontal padding */
+    min-width: 8rem;          /* ensure pill is wide */
+    width: auto;
+    transition: width 0.3s ease, padding 0.3s ease;
+  }
+
+  /* Title always visible */
+.tilted-overlay-content .overlay-title {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Description hidden by default */
+.tilted-overlay-content .overlay-desc {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #eee;
+    text-align: center;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    }
+
+    .tilted-card-container:hover .tilted-overlay-content {
+        padding: 0.5rem 1.5rem;
+        width: auto;
+      }
+      
+      .tilted-card-container:hover .overlay-desc {
+        max-height: 4rem; /* adjust to fit text */
+        opacity: 2;
+      }
+
+/* have each overlay expand to fit given description */
+
+
+.tilted-overlay-content {
+    padding: 0.5rem 1rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border-radius: 0.5rem;
+    /* min-width: 8rem; */ /* This line was removed */
+    /* white-space: nowrap; */ /* This line was removed */
+    /* overflow: hidden; */ /* This line was removed */
+    /* text-overflow: ellipsis; */ /* This line was removed */
+  }
+
+  .overlay-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+/* Borders around project cards */
+
+.tilted-card-container {
+    border: 5px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+/* zoom effect for tilted cards images */
+
+.tilted-card-container img {
+    transition: transform 0.3s ease;
+  }
+
+  .tilted-card-container:hover img {
+    transform: scale(1.05);
+  }
+
+/* Tilted card border glossy */
+
+.tilted-card-container {
+    border: 5px solid rgba(0, 0, 0, 0.6);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .tilted-card-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+
+/* Tilted card image takes over 100% of card*/

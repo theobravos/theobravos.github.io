@@ -3,8 +3,6 @@ import { VscHome, VscArchive, VscAccount, VscSettingsGear, VscMail } from 'react
 
 // Import all your components
 import Iridescence from './components/Iridescence';
-import Dock from './components/Dock';
-import Header from './components/Header';
 import Hero from './components/Hero';
 import AboutMe from './components/AboutMe';
 import Projects from './components/Projects';

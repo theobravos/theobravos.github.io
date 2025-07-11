@@ -1,0 +1,52 @@
+/* ShinyText.css */
+
+/* base text‐glint effect (unchanged) */
+.shiny-text {
+    background: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0) 40%,
+      rgba(255, 255, 255, 0.8) 50%,
+      rgba(255, 255, 255, 0) 60%
+    );
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    display: inline-block;
+    animation: shine 5s linear infinite;
+  }
+  
+  @keyframes shine {
+    0%   { background-position: 100%; }
+    100% { background-position: -100%; }
+  }
+  .shiny-text.disabled {
+    animation: none;
+  }
+  
+  /* new: button container + sliding “glint” over the background */
+  .btn.resume-download {
+    position: relative;
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.375rem;
+    background: #000000;      /* dark slate, or whatever fits your palette */
+    color: #fff;
+    text-decoration: none;
+    overflow: hidden;
+  }
+  
+  /* the white sliver that sweeps across on hover */
+  .btn.resume-download::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -75%;
+    width: 50%;
+    height: 100%;
+    background: rgba(255,255,255,0.5);
+    transform: skewX(-30deg);
+    transition: left 1s ease-out;
+  }
+  
+  .btn.resume-download:hover::before {
+    left: 175%;
+  }

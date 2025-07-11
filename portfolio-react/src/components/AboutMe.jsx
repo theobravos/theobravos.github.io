@@ -35,7 +35,7 @@ export default function AboutMe() {
           <div className="about-pill">
             <h3>My Journey</h3>
             <p>
-              As a Master of Science in Business Analytics candidate at USC and a former NCAA D1 athlete, I've built a unique foundation of disciplined strategy and quantitative expertise. My passion lies in the intersection of sports, business, and data.
+              As a Master of Science in Business Analytics candidate at USC and a former NCAA D1 athlete, I've built a unique foundation of disciplined strategy and quantitative expertise. My passion lies in the intersection of business, innovation, and data.
             </p>
             <p>
               I thrive on translating complex datasets into actionable insights, whether it's building predictive models for athlete performance or optimizing business processes. My goal is to drive decision-making and uncover value through the power of analytics.
